@@ -1,0 +1,27 @@
+{
+  "validation": {
+    "username": {
+      "string.base": "يجب أن يكون اسم المستخدم نصًا",
+      "string.empty": "لا يمكن أن يكون اسم المستخدم فارغًا",
+      "string.min": "يجب أن يكون اسم المستخدم على الأقل 3 أحرف",
+      "string.max": "لا يمكن أن يكون اسم المستخدم أطول من 30 حرفًا",
+      "any.required": "اسم المستخدم مطلوب",
+      "any": {
+        "required": "اسم المستخدم مطلوب"
+      }
+    },
+    "position": {
+      "string.base": "يجب أن يكون المنصب نصًا",
+      "string.empty": "لا يمكن أن يكون المنصب فارغًا",
+      "any.required": "المنصب مطلوب"
+    },
+    "description": {
+      "string.base": "يجب أن تكون الوصف نصًا",
+      "string.empty": "لا يمكن أن تكون الوصف فارغًا"
+    }
+  },
+  "USER": {
+    "USERNAME_UNIQUE": "USERNAME_UNIQUE",
+    "CREATED_SUCCESSFULLY": "نجاح"
+  }
+}

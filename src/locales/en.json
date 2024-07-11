@@ -1,0 +1,27 @@
+{
+  "validation": {
+    "username": {
+      "string.base": "Username must be a string",
+      "string.empty": "Username cannot be empty",
+      "string.min": "Username must be at least 3 characters long",
+      "string.max": "Username cannot be longer than 30 characters",
+      "any.required": "Username is required",
+      "any": {
+        "required": "Username is required"
+      }
+    },
+    "position": {
+      "string.base": "Position must be a string",
+      "string.empty": "Position cannot be empty",
+      "any.required": "Position is required"
+    },
+    "description": {
+      "string.base": "Description must be a string",
+      "string.empty": "Description cannot be empty"
+    }
+  },
+  "USER": {
+    "USERNAME_UNIQUE": "USERNAME_UNIQUE",
+    "CREATED_SUCCESSFULLY": "SUCCESS"
+  }
+}
