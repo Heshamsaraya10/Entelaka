@@ -1,5 +1,5 @@
-import { tr } from "@faker-js/faker";
 import { Sequelize } from "sequelize";
+
 
 const sequelize = new Sequelize({
   dialect: "postgres",

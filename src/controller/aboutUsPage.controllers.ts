@@ -9,7 +9,6 @@ import User from "../model/userModel";
 import AboutPage from "../model/aboutUsPageModel";
 import ApiError from "../utiles/apiError";
 
-
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -48,19 +47,21 @@ export const uploadAboutUsImage = upload.fields([
 //image processing
 export const resizeImage = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
-    const filename = `about-${uuidv4()}-${Date.now()}.jpeg`;
-    if (req.file) {
-      sharp(req.file.buffer)
-        .resize(600, 600)
-        .toFormat("jpeg")
-        .jpeg({ quality: 90 })
-        .toFile(`uploads/${filename}`);
+    try {
+      const filename = `about-${uuidv4()}-${Date.now()}.jpeg`;
+      if (req.file) {
+        await sharp(req.file.buffer)
+          .resize(600, 600)
+          .toFormat("jpeg")
+          .jpeg({ quality: 90 })
+          .toFile(`uploads/${filename}`);
 
-      // //save image into our db
-      req.body.image = filename;
+        req.body.image = filename;
+      }
+      next();
+    } catch (error) {
+      next(new ApiError("Image processing failed", 500));
     }
-
-    next();
   }
 );
 
@@ -80,7 +81,7 @@ export const addDataToPage = asyncHandler(
       userId,
     });
 
-    res.status(201).json({ status: "Success", data: aboutPage });
+    res.status(201).json({ status:"Success", data: aboutPage });
   }
 );
 
@@ -99,6 +100,11 @@ export const getDataFromPage = asyncHandler(
         },
       ],
     });
+
+    if (!aboutPage) {
+      return next(new ApiError(`No page found with id ${id}`, 404));
+    }
+
     res.status(201).json({ status: "Success", data: aboutPage });
   }
 );

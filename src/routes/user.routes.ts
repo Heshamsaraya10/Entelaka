@@ -11,8 +11,6 @@ import {
 import { validateUser } from "../middlewares/Validation Middlewares/user.validation.middleware";
 const router = Router();
 
-const upload = multer({ dest: "src/uploads/users" });
-
 router
   .route("/")
   .post(

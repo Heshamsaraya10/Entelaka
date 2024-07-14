@@ -21,7 +21,10 @@
     }
   },
   "USER": {
-    "USERNAME_UNIQUE": "USERNAME_UNIQUE",
+    "USERNAME_UNIQUE": "اسم المستخدم فريد",
     "CREATED_SUCCESSFULLY": "نجاح"
+  },
+  "Page":{
+    "CREATED_SUCCESSFULLY":"نجاح"
   }
 }
