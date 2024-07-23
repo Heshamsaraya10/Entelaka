@@ -6,7 +6,6 @@ import sharp from "sharp";
 import MediaPage from "../model/mediaCenterPage";
 import ApiError from "../utiles/apiError";
 import ApiFeatures from "../utiles/apiFeatures";
-import { uploadSingleImage } from "../middlewares/uploadImageMiddleware";
 import multer from "multer";
 import path from "path";
 

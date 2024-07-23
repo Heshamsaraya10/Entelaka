@@ -51,6 +51,7 @@ export const createUser = asyncHandler(
   }
 );
 
+
 export const updateUser = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.id;

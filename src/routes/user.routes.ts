@@ -1,5 +1,4 @@
 import { RequestHandler, Router } from "express";
-import multer from "multer";
 import {
   createUser,
   updateUser,
@@ -14,15 +13,20 @@ const router = Router();
 router
   .route("/")
   .post(
-    uploadUserImage,
-    resizeImage,
-    validateUser,
+    uploadUserImage as RequestHandler,
+    resizeImage as RequestHandler,
+    validateUser as RequestHandler,
     createUser as RequestHandler
   )
-  .get(getAllUsers);
+  .get(getAllUsers as RequestHandler);
+
 router
   .route("/:id")
-  .put(uploadUserImage, resizeImage, updateUser as RequestHandler)
-  .delete(deleteUser);
+  .put(
+    uploadUserImage as RequestHandler,
+    resizeImage as RequestHandler,
+    updateUser as RequestHandler
+  )
+  .delete(deleteUser as RequestHandler);
 
 export default router;

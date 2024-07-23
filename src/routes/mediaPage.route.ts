@@ -13,15 +13,15 @@ const router = Router();
 router
   .route("/")
   .post(
-    uploadMediaPageImage,
-    resizeMediaPageImage,
-    validateMediaPage,
+    uploadMediaPageImage as RequestHandler,
+    resizeMediaPageImage as RequestHandler,
+    validateMediaPage as RequestHandler,
     addDataToMediaPage as RequestHandler
   );
 
 router
   .route("/:id")
-  .get(getMediaPageData)
-  .put(updateMediaPageData)
-  .delete(deleteMediaPageData);
+  .get(getMediaPageData as RequestHandler)
+  .put(updateMediaPageData as RequestHandler)
+  .delete(deleteMediaPageData as RequestHandler);
 export default router;

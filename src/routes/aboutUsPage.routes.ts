@@ -14,15 +14,15 @@ const router = Router();
 router
   .route("/")
   .post(
-    uploadAboutUsImage,
-    resizeImage,
-    validateAboutPage,
+    uploadAboutUsImage as RequestHandler,
+    resizeImage as RequestHandler,
+    validateAboutPage as RequestHandler,
     addDataToPage as RequestHandler
   );
 
-router
+  router
   .route("/:id")
   .get(getDataFromPage as RequestHandler)
-  .put(updateDataFromPage)
-  .delete(deletePage);
+  .put(updateDataFromPage as RequestHandler)
+  .delete(deletePage as RequestHandler);
 export default router;

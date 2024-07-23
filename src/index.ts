@@ -10,7 +10,7 @@ import mountRoutes from "./hooks/hooks";
 import { seedUsers } from "./sedeer";
 
 
-// seedUsers()
+seedUsers()
 
 //express app
 const app = express();
